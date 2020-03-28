@@ -114,7 +114,7 @@ filter1_trips_by_station = trips_by_station[
 def draw_barchart(hour):
     """Filter and draw bar chart"""
     filter2_trips_by_station = filter1_trips_by_station[
-            filter1_trips_by_station.index.get_level_values(2) == hour]
+            filter1_trips_by_station.index.get_level_values(2) >= hour]
 
     trips_by_station = filter2_trips_by_station.groupby(['start_station_name'],
                                                         as_index=False
